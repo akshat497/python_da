@@ -80,18 +80,25 @@
 
 # Check whether a number lies between 1 and 100 (inclusive).
 # first=int(input("enter a number"))
-year=int(input("enter a number"))
+alphabet=input("enter a number")
 
-if year%4==0:
-    print("leap year")  
+
+if alphabet.isupper():
+    print("Uppercase character")
+elif alphabet.islower():
+    print("Lowercase character")
 else:
-    print("not a leap year")
-# if first>second:
-#     print("first is greater")
-# elif    first<second:
-#     print("second is greater")
+    print("Not an alphabet character")
+# if alphabet%4==0:
+#     print("leap year")  
 # else:
-#     print("both are equal")
+#     print("not a leap year")
+# # if first>second:
+# #     print("first is greater")
+# # elif    first<second:
+# #     print("second is greater")
+# # else:
+# #     print("both are equal")
 
 
 # if number%2==0:
