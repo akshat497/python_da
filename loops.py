@@ -64,30 +64,125 @@
 # while number>=10:
 #     print(number)
 #     number-=5'
+ 
+# a=1234
+
+#reverse a number
+# rev=0
+# while a>0:
+#     digit=a%10
+#     rev=rev*10+digit
+#     a=a//10
+    
+#fibonacci series with while loop
+# n1,n2=0,1
+# count=0
+# terms=10      
+# while count<terms:
+#     print(n1)
+#     nth=n1+n2
+#     n1=n2
+#     n2=nth
+#     count+=1  
+# print("Reversed Number is :",rev)
+# list=[]
+# while True:
+#         print("press 1 to add number in list")
+#         print("press 2 to delete number from list")
+#         print("press 3 to view list")
+#         print("press 4 to exit")
+#         user_input=int(input("Enter a number : "))
+#         if user_input==1:
+#                 number=int(input("Enter number to add : "))
+#                 list.append(number)
+#                 print(number," added to the list")
+#         elif user_input==2:
+#                 number=int(input("Enter number to delete : "))
+#                 if number in list:
+#                         list.remove(number)
+#                         print(number," removed from the list")
+#                 else:
+#                         print(number," not found in the list")
+#         elif user_input==3:
+#                 print("List contents :",list)
+#         elif user_input==4:
+#                 print("Exiting the program")
+#                 break
+#         else:
+#                 print("Invalid input, please try again")
+                
+
+# for i in range(5,0,-1):
+#     print(i)
+    
+# list=[1,2,2,2,2,3,4]
 
 
-list=[]
-while True:
-        print("press 1 to add number in list")
-        print("press 2 to delete number from list")
-        print("press 3 to view list")
-        print("press 4 to exit")
-        user_input=int(input("Enter a number : "))
-        if user_input==1:
-                number=int(input("Enter number to add : "))
-                list.append(number)
-                print(number," added to the list")
-        elif user_input==2:
-                number=int(input("Enter number to delete : "))
-                if number in list:
-                        list.remove(number)
-                        print(number," removed from the list")
-                else:
-                        print(number," not found in the list")
-        elif user_input==3:
-                print("List contents :",list)
-        elif user_input==4:
-                print("Exiting the program")
-                break
+# count=len(list)
+
+# print(count)
+
+# list=[]
+# while True:
+#     print("press 1 to add in list")
+#     print("press 2 to view list")
+#     print("press 3 to delete from list")
+#     print("press 4 to sort  list in ascending order")
+#     print("press 5 to sort  list in reverse order")
+#     print("press 6 to sum  list items")
+#     print("press 7 to find the maximum number in the  list ")
+#     print("press 8 to find the minimum number in the  list ")
+#     print("press 9 to find the length of the list ")
+#     print("press 10 to to clear the list ")
+#     print("press 11 to count list items ")
+#     print("press 12 to exit")
+    
+    
+
+
+
+student={
+    "name":"abc",
+    "age":23,
+    "phone":1234567890
+    
+}   
+student.update({"email":"akshat@gmail.com","name":"akshat","login":False})
+
+counter=0
+for key,value in student.items():
+    if key=="milind":
+        if value==True:
+            print("User is logged in")
         else:
-                print("Invalid input, please try again")
+            print("User is not logged in")
+    else:
+        counter+=1
+        
+if counter==len(student):
+    print("Login key not found")
+
+
+
+# print(student["email"])
+# print(student["name"])  
+
+# print(student.get("firstName"))
+
+
+# print(student.keys())
+
+# print(student.values())
+
+# print(student.items())
+
+
+# for key,value in student.items():
+#     print(key,value)
+
+# for a ,b in student.items():
+#     print(a,b)
+
+# for a in student.keys():
+#     print(a)
+
