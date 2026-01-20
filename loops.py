@@ -101,88 +101,199 @@
 #                 if number in list:
 #                         list.remove(number)
 #                         print(number," removed from the list")
-#                 else:
-#                         print(number," not found in the list")
-#         elif user_input==3:
-#                 print("List contents :",list)
-#         elif user_input==4:
-#                 print("Exiting the program")
-#                 break
-#         else:
-#                 print("Invalid input, please try again")
+# #                 else:
+# #                         print(number," not found in the list")
+# #         elif user_input==3:
+# #                 print("List contents :",list)
+# #         elif user_input==4:
+# #                 print("Exiting the program")
+# #                 break
+# #         else:
+# #                 print("Invalid input, please try again")
                 
 
-# for i in range(5,0,-1):
-#     print(i)
+# # for i in range(5,0,-1):
+# #     print(i)
     
-# list=[1,2,2,2,2,3,4]
+# # list=[1,2,2,2,2,3,4]
 
 
-# count=len(list)
+# # count=len(list)
 
-# print(count)
+# # print(count)
 
-# list=[]
-# while True:
-#     print("press 1 to add in list")
-#     print("press 2 to view list")
-#     print("press 3 to delete from list")
-#     print("press 4 to sort  list in ascending order")
-#     print("press 5 to sort  list in reverse order")
-#     print("press 6 to sum  list items")
-#     print("press 7 to find the maximum number in the  list ")
-#     print("press 8 to find the minimum number in the  list ")
-#     print("press 9 to find the length of the list ")
-#     print("press 10 to to clear the list ")
-#     print("press 11 to count list items ")
-#     print("press 12 to exit")
+# # list=[]
+# # while True:
+# #     print("press 1 to add in list")
+# #     print("press 2 to view list")
+# #     print("press 3 to delete from list")
+# #     print("press 4 to sort  list in ascending order")
+# #     print("press 5 to sort  list in reverse order")
+# #     print("press 6 to sum  list items")
+# #     print("press 7 to find the maximum number in the  list ")
+# #     print("press 8 to find the minimum number in the  list ")
+# #     print("press 9 to find the length of the list ")
+# #     print("press 10 to to clear the list ")
+# #     print("press 11 to count list items ")
+# #     print("press 12 to exit")
     
     
 
 
 
-student={
-    "name":"abc",
-    "age":23,
-    "phone":1234567890
+# student={
+#     "name":"abc",
+#     "age":23,
+#     "phone":1234567890
     
-}   
-student.update({"email":"akshat@gmail.com","name":"akshat","login":False})
+# }   
+# student.update({"email":"akshat@gmail.com","name":"akshat","login":False})
 
-counter=0
-for key,value in student.items():
-    if key=="milind":
-        if value==True:
-            print("User is logged in")
-        else:
-            print("User is not logged in")
-    else:
-        counter+=1
-        
-if counter==len(student):
-    print("Login key not found")
-
-
-
-# print(student["email"])
-# print(student["name"])  
-
-# print(student.get("firstName"))
-
-
-# print(student.keys())
-
-# print(student.values())
-
-# print(student.items())
-
-
+# counter=0
 # for key,value in student.items():
-#     print(key,value)
+#     if key=="milind":
+#         if value==True:
+#             print("User is logged in")
+#         else:
+#             print("User is not logged in")
+#     else:
+#         counter+=1
+        
+# if counter==len(student):
+#     print("Login key not found")
 
-# for a ,b in student.items():
-#     print(a,b)
 
-# for a in student.keys():
-#     print(a)
 
+# # print(student["email"])
+# # print(student["name"])  
+
+# # print(student.get("firstName"))
+
+
+# # print(student.keys())
+
+# # print(student.values())
+
+# # print(student.items())
+
+
+# # for key,value in student.items():
+# #     print(key,value)
+
+# # for a ,b in student.items():
+# #     print(a,b)
+
+# # for a in student.keys():
+# #     print(a)
+
+# dictionary={"a","b","c"}
+
+
+
+# # 
+    
+
+# new=dict.fromkeys(dictionary,0)
+# print(type(new))
+# print(new)
+
+
+# list={"name":"akshat","age":24,"phone":7056275526}
+
+
+
+
+# for key , value in list.items():
+#    if(value==24):
+#        print("Found")
+#        break
+    
+    
+# if("aksdhat" in list):
+#     print("Found")
+# else:
+#     print("Not Found")
+
+
+# print(students[1]["marks"])
+
+# students = {
+# 1: {"name": "Amit", "marks": 80},
+# 2: {"name": "Neha", "marks": 90}
+# }
+
+# for outer in students:
+#     # print("Student", outer)
+#     for inner in students[outer]:
+#         # print("student inner", inner)
+#         print(inner, ":", students[outer][inner])
+        
+        
+# search
+# create
+# update
+# delete 
+# delete specific 
+students = {
+     1: {"name": "Amit", "marks": 80},
+     2: {"name": "Neha", "marks": 90}
+}
+while True:
+    print("Press 1 to search student by id")
+    print("Press 2 to add student")
+    print("Press 3 to update student")
+    print("Press 4 to delete student")
+    print("Press 5 to exit")
+    print("Press 6 to view all students")
+    user_input=int(input("Enter your choice: "))
+    
+    if user_input==1:
+        id=int(input("Enter student id to search: "))
+        if id in students:
+            print("Student found:", students[id])
+        else:
+            print("Student not found")
+    
+    elif user_input==2:
+        id=int(input("Enter new student id: "))
+        name=input("Enter student name: ")
+        marks=int(input("Enter student marks: "))
+        students[id]={"name":name,"marks":marks}
+        print("Student added successfully")
+    
+    elif user_input==3:
+        id=int(input("Enter student id to update: "))
+        if id in students:
+            name=input("Enter new name: ")
+            marks=int(input("Enter new marks: "))
+            students[id].update({"name":name,"marks":marks})
+            print("Student updated successfully")
+        else:
+            print("Student not found")
+    
+    elif user_input==4:
+        id=int(input("Enter student id to delete: "))
+        if id in students:
+            students.pop(id)
+            print("Student deleted successfully")
+        else:
+            print("Student not found")
+        
+    
+    elif user_input==5:
+        print("Exiting program")
+        break
+    elif user_input==6:
+        print(students)
+    
+    else:
+        print("Invalid choice, please try again")
+        
+        
+        
+
+    
+    
+# d=dict.fromkeys(students,0)
+
+# print("name:", students[1]["name"])
