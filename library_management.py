@@ -17,7 +17,7 @@ def viewBooks():
         for book in books:
             if book["available"]:
                 # print(f" {book['title']} by {book['author']} ")
-                print(book["title"])
+                print(book)
 def viewStudents():
         print("Students in Library:")
         for student in students:
@@ -29,13 +29,33 @@ def issueBook():
        for book in books:
            if book_id==book['id']:
                if book['available']:
-                   book['available']=False
+                   
                    for student in students:
                           if students_id==student['id']:
                             student['borrowed_books'].append(book['id'])
                             book['issued_to']=student['id']
+                            book['available']=False
                             print(f"Book '{book['title']}' issued to {student['id']}")
                             return
+                        
+                        
+def returnBook():
+    book_id=int(input("Enter book ID to return: "))
+    for book in books:
+        if book_id==book['id']:
+            if book["available"]==False:
+                student_id=book['issued_to']
+                for student in students:
+                    if student_id==student['id']:
+                        for id in student['borrowed_books']:
+                            if id==book['id']:
+                                student['borrowed_books'].remove(book['id'])
+                                book['issued_to']=None
+                                book['available']=True
+                                print(f"Book '{book['title']}' returned by {student['id']}")
+                                return
+                    
+    
 while True: 
     print("1. View Books")
     print("2. View Students")
@@ -52,6 +72,8 @@ while True:
     elif choice==3:
         issueBook()
         viewStudents()
-        
+    elif choice==4:
+        returnBook() 
+        viewStudents()   
     if choice==5:
         break
