@@ -31,13 +31,22 @@ def issueBook():
                if book['available']:
                    
                    for student in students:
-                          if students_id==student['id']:
-                            student['borrowed_books'].append(book['id'])
+                          if students_id==student["id"]:
+                            student['borrowed_books'].append(book["id"])
                             book['issued_to']=student['id']
                             book['available']=False
                             print(f"Book '{book['title']}' issued to {student['id']}")
-                            return
-                        
+                            return True
+                          else:
+                            print("Student ID not found.")
+                            return False
+               else:
+                  print("Book is not available for issuing.")
+                  return False
+           else:
+                print("Book ID not found.")      
+                return False
+                            
                         
 def returnBook():
     book_id=int(input("Enter book ID to return: "))
@@ -70,8 +79,9 @@ while True:
     elif choice==2:
         viewStudents()
     elif choice==3:
-        issueBook()
-        viewStudents()
+       if issueBook()   :
+           viewStudents()
+        
     elif choice==4:
         returnBook() 
         viewStudents()   
