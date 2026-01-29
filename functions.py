@@ -91,3 +91,32 @@ def outer():
     
 outer()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+def sum(a=5,b=10):#parameters
+    
+    
+    a+b
+    
+
+
+   
+    
+
+
+summition=sum(15, 10)    #arguments
+
+print(summition)
+
+sum(b=22,a=8) #keyword arguments
