@@ -107,7 +107,7 @@ outer()
 def sum(a=5,b=10):#parameters
     
     
-    a+b
+    return a+b
     
 
 
@@ -117,6 +117,10 @@ def sum(a=5,b=10):#parameters
 
 summition=sum(15, 10)    #arguments
 
-print(summition)
 
 sum(b=22,a=8) #keyword arguments
+
+
+
+
+
