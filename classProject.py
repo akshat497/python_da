@@ -54,7 +54,6 @@ while True:
         obj1.removeEmployee(name)     
     if choice ==3:
         print(Employees)
-        
     if choice ==4:
         name=input("enter employee name to update: ")
         obj1.updateEmployee(name)
