@@ -1,8 +1,18 @@
 import json
-from os import name
+
 
 students=[]
 
+
+class student:
+    def __init__(self,name,age,phone,city,email):
+        self.name=name
+        self.age=age
+        self.phone=phone
+        self.city=city
+        self.email=email
+    def __str__(self):
+        return f"name: {self.name}, age: {self.age}, phone: {self.phone}, city: {self.city}, email: {self.email}"
 
 def addStudent():
     name=input("Enter name: ")
@@ -10,29 +20,36 @@ def addStudent():
     phone=input("Enter phone number: ")
     city=input("Enter city: ")
     email=input("Enter email: ")
-    student={
-        "name": name,
-        "age": age,
-        "phone": phone,
-        "city": city,
-        "email": email
-    }
-    students.append(student)
+    obj=student(name,age,phone,city,email)
+
+    students.append({
+        "name": obj.name,
+        "age": obj.age,
+        "phone": obj.phone,
+        "city": obj.city,
+        "email": obj.email
+    })
+   
     print("Student added successfully.")
     file=open("students.json","w")
     json.dump(students,file,indent=1)
     file.close()
 
 
-def updatingKey(key,value):
-    email=input("enter email to update: ")
+def updatingKey(key,value,action):
+    email=input("enter email : ")
     file=open("students.json","r")  
     data=json.load(file)
     file.close()
     for student in data:
         if student['email']==email:
-            student[key]=value
-            print(f"{key} updated successfully.")
+            if action=='update':
+                student[key]=value
+                print(f"{key} updated successfully.")
+            elif action=='delete':
+                data.remove(student)
+                print(f"Student with email {email} deleted successfully.")
+            
             file=open("students.json","w")
             json.dump(data,file,indent=1)
             file.close()
@@ -45,22 +62,21 @@ def updateStudent():
     choice=int(input("Enter your choice: "))
     if choice==1:
         name=input("enter new name to update: ")
-        updatingKey('name',name)
+        updatingKey('name',name,'update')
+        
     if choice==2:
         age=int(input("enter new age to update: "))
-        updatingKey('age',age)
-   
+        updatingKey('age',age,'update')
                 
-        if choice==3:
+    if choice==3:
             phone=input("enter new phone number to update: ")
-            updatingKey('phone',phone)
-        if choice==4:
+            updatingKey('phone',phone,'update')
+            
+    if choice==4:
             city=input("enter new city to update: ")
             updatingKey('city',city)
         
-        
-        
-        
+     
 while True:
     print("1 to add student")
     print("2 to view students")
@@ -80,4 +96,7 @@ while True:
         
     if choice==3:
         updateStudent()
+    if choice == 4:
+        
+        updatingKey('email',None,'delete')
     

@@ -1,9 +1,16 @@
 [
  {
-  "name": "akshat",
-  "age": 28,
+  "name": "hritik",
+  "age": 23,
   "phone": "1234",
   "city": "delhi",
-  "email": "akshat"
+  "email": "hritik"
+ },
+ {
+  "name": "parteeek",
+  "age": 21,
+  "phone": "2133",
+  "city": "delhi",
+  "email": "parteeek"
  }
 ]
