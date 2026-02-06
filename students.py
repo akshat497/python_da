@@ -1,4 +1,5 @@
 import json
+from os import name
 
 students=[]
 
@@ -22,26 +23,42 @@ def addStudent():
     json.dump(students,file,indent=1)
     file.close()
 
+
+def updatingKey(key,value):
+    email=input("enter email to update: ")
+    file=open("students.json","r")  
+    data=json.load(file)
+    file.close()
+    for student in data:
+        if student['email']==email:
+            student[key]=value
+            print(f"{key} updated successfully.")
+            file=open("students.json","w")
+            json.dump(data,file,indent=1)
+            file.close()
+            
 def updateStudent():
     print("1 to update name")
     print("2 to update age")
     print("3 to update phone number")
     print("4 to update city")
-    print("5 to update email")
     choice=int(input("Enter your choice: "))
     if choice==1:
         name=input("enter new name to update: ")
-        email=input("enter email to update: ")
-        file=open("students.json","r")  
-        data=json.load(file)
-        file.close()
-        for student in data:
-            if student['email']==email:
-                student['name']=name
-                print("Name updated successfully.")
-                file=open("students.json","w")
-                json.dump(data,file,indent=1)
-                file.close()
+        updatingKey('name',name)
+    if choice==2:
+        age=int(input("enter new age to update: "))
+        updatingKey('age',age)
+   
+                
+        if choice==3:
+            phone=input("enter new phone number to update: ")
+            updatingKey('phone',phone)
+        if choice==4:
+            city=input("enter new city to update: ")
+            updatingKey('city',city)
+        
+        
         
         
 while True:
