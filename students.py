@@ -2,8 +2,6 @@ import json
 
 
 students=[]
-
-
 class student:
     def __init__(self,name,age,phone,city,email):
         self.name=name
@@ -15,9 +13,16 @@ class student:
         return f"name: {self.name}, age: {self.age}, phone: {self.phone}, city: {self.city}, email: {self.email}"
 
 def addStudent():
+    
     name=input("Enter name: ")
     age=int(input("Enter age: "))
     phone=input("Enter phone number: ")
+    while True:
+        if len(phone)==10 and phone.isdigit():
+            break
+        else:
+            print("Invalid phone number. Please enter a 10-digit number.")
+            phone=input("Enter phone number: ")
     city=input("Enter city: ")
     email=input("Enter email: ")
     obj=student(name,age,phone,city,email)
@@ -75,28 +80,57 @@ def updateStudent():
     if choice==4:
             city=input("enter new city to update: ")
             updatingKey('city',city)
-        
-     
+   
+
+count=0
+def getUser():
+    global count
+    userName=input("enter username: ")
+    password=input("enter password: ")
+    file=open("users.json","r")
+    data=json.load(file)
+    file.close()
+    
+    for user in data:
+        if user['name']==userName and user['password']==int(password) and user['admin']=="yes":
+            print("Login successful. Welcome, admin!")
+            return True
+            
+        else:
+            print("Invalid credentials or not an admin user. Access denied.")
+            count+=1
+            return False
+  
+isLoggedIn=getUser()
+
 while True:
-    print("1 to add student")
-    print("2 to view students")
-    print("3 to update student")
-    print("4 to delete student")
-    print("5 to exit")
-    choice=int(input("Enter your choice: "))
-    
-    if choice==1:
-        addStudent()
-        
-    if choice==2:
-        file=open("students.json","r")  
-        data=json.load(file)
-        print(data)
-        file.close()
-        
-    if choice==3:
-        updateStudent()
-    if choice == 4:
-        
-        updatingKey('email',None,'delete')
-    
+    print("Welcome to the Student Management System!")
+    print(isLoggedIn)
+    if count>3:
+        print("Too many failed login attempts. Exiting the program.")
+        break
+    if isLoggedIn:
+         print("1 to add student")
+         print("2 to view students")
+         print("3 to update student")
+         print("4 to delete student")
+         print("5 to exit")
+         choice=int(input("Enter your choice: "))
+    #ifs
+         if choice==1:
+          addStudent()   
+         if choice==2:
+           file=open("students.json","r")  
+           data=json.load(file)
+           print(data)
+           file.close()    
+         if choice==3:
+           updateStudent()
+         if choice == 4:
+           updatingKey('email',None,'delete')
+         if choice==5:
+             break
+    else:
+         print("Please login to continue.")
+         isLoggedIn=getUser()   
+   

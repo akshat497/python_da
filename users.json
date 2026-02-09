@@ -1,0 +1,17 @@
+[
+    {
+        "name":"teacher1",
+        "password":1234,
+        "admin":"yes"
+    },
+    {
+        "name":"teacher2",
+        "password":1234,
+        "admin":"no"
+    }
+    ,{
+        "name":"teacher3",
+        "password":1234,
+        "admin":    "no"
+    }
+]
