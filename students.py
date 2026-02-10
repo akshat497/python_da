@@ -105,7 +105,6 @@ isLoggedIn=getUser()
 
 while True:
     print("Welcome to the Student Management System!")
-    print(isLoggedIn)
     if count>3:
         print("Too many failed login attempts. Exiting the program.")
         break
