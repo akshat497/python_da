@@ -133,3 +133,13 @@ for i in marks:
     
 if a>10:
     print("a is greater than 10")
+
+
+number=int(input("enter a number"))
+factor=1
+
+for i in range(1,number+1):
+    factor=factor*i
+    print(factor)
+    
+    

@@ -22,3 +22,9 @@ price = driver.find_element(By.CLASS_NAME, "a-price-whole").text
 print("Amazon Price:", price)
 
 driver.quit()
+
+
+
+
+
+
