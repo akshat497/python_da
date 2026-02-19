@@ -33,11 +33,11 @@ number=int(input("enter a number"))
                    #11
 for num in range(2,number+1):
     count=0
-    for j in range(1,num+1):
+    for j in range(2,num):
         if num%j==0:
             count=count+1
     
-    if count>1:
+    if count==0:
         print(num)
        
 
