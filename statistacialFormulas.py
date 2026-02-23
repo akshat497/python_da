@@ -13,13 +13,10 @@ arr=np.array([12,34,56,78,33])
 
 mean=np.mean(arr)
 print(mean)
-deviation=np.array([])
 square=np.array([])
 for i in arr:
     value=i-mean
-    print(value)
     square1=value*value
-    print(square1)
     square=np.append(square,[square1])
    
    
