@@ -16,3 +16,6 @@ if z>1.96:
     print("biased flips")
 else:
     print("fair decision")
+    
+    
+    
