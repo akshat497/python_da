@@ -9,9 +9,11 @@ sample_means = []
 for i in range(5000):
     sample = np.random.choice(population, size=30)
     mean=np.mean(sample)
+    
     sample_means.append(mean)
 
 plt.hist(sample_means, bins=25)
+print("mean of sample means:", np.mean(sample_means))
 plt.title("Distribution of Sample Means")
 plt.show()
 
@@ -34,6 +36,20 @@ import math
 #     print("Fail to reject the null hypothesis")
 
 
+# array=np.array([30,40,55,65,800])
 
+# mean=np.mean(array)
 
+# var=np.var(array)
+# std=np.sqrt(var)
+# for x in array:
+#     z_score=(x-mean)/std
+#     if (abs(z_score)>1.96):
+#         print(f"{x} claim is rejected")
+#     else:
+#         print(f"{x} claim is accepted")
+    
+#     print(f"Z-score for {x}: {z_score}")
+# print(var)
+# print(std)
 
